@@ -26,19 +26,33 @@ return sum;
         
 }
 
-int fibonacci(int num){
+bool isEven(int num){
     
-    int sum;
-    int i = 1;
-    
-    while(i < num){
-        
-        
-        
-    }
-    
+    return (num%2==0);
     
 }
+
+int fibonacci(int num1, int num2, int max){
+    
+    int temp=0, sum=0;
+    
+    do {
+        if (num2 % 2 == 0) {
+            sum = sum + num2;
+        }
+        temp = num1 + num2;
+        num1 = num2;
+        num2 = temp;
+        
+    } while (num2 < 4000000);
+    
+    return sum;
+}
+        
+
+    
+    
+
 
 
 
@@ -46,7 +60,7 @@ int main() {
     
     cout << _3and5() << endl;
     
-    fibonacci(4000000);
+    cout << fibonacci(0,1,4000000) << endl;
    
     return 0;
 }
